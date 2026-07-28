@@ -15,6 +15,6 @@ class CicdApplicationTests {
 	@Test
 	void addTest()
 	{
-		assertEquals(4, 2 + 2);
+		assertEquals(5, 2 + 2);
 	}
 }

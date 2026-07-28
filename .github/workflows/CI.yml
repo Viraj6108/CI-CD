@@ -29,4 +29,5 @@ jobs:
         with: 
           name: springboot-jar
           path: target/*.jar
+          retention-day: 7
         

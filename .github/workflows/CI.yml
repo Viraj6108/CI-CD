@@ -1,0 +1,39 @@
+name: Java CI
+#  runs every time code is pushed to main repository 
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+# checkouts the code on github runner
+      - name: Checkout Code
+        uses: actions/checkout@v4
+# installs java on runner 
+      - name: Setup Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: 17
+
+      - name: Build Project
+        run: mvn clean package
+
+      - name: Upload JAR
+        uses: actions/upload-artifact@v4
+        with: 
+          name: springboot-jar
+          path: target/*.jar
+          retention-day: 7
+      - name : upload test reports background
+        uses: actions/upload-artifact@v4
+        with: 
+          name: test-reports 
+          path: target/surefire-reports
+      
+        

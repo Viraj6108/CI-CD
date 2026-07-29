@@ -36,7 +36,7 @@ jobs:
           name: test-reports 
           path: target/surefire-reports
       - name: Build docker image
-        run:  docker build -t demo-app .
+        run:  docker build -t demo-app:${{ github.sha }} .
       - name: docker image verification step background
         run:  docker images
         

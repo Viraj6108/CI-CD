@@ -50,8 +50,8 @@ jobs:
           context: .
           push: true
           tags: | 
-                  ${{secrets.DOCKER_USERNAME}}/demo-app:latest
-                  ${{secrets.DOCKER_USERNAME}}/demo-app:${{ github.sha }}
+             ${{secrets.DOCKER_USERNAME}}/demo-app:latest
+             ${{secrets.DOCKER_USERNAME}}/demo-app:${{ github.sha }}
 
 
         # verfiy docker image 

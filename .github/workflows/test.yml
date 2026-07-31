@@ -72,7 +72,7 @@ jobs:
       - name: build docker image
         run: |
           docker build -t demo-app .
-          docker tag ${{ steps.login-ecr.outputs.registry }}/${{ secrets.ECR_REPOSITORY }}:${{ github.sha}}
+          docker tag demo-app:latest:${{ steps.login-ecr.outputs.registry }}/${{ secrets.ECR_REPOSITORY }}:${{ github.sha}}
 
       - name: push docker image to ECR
         run: |

@@ -77,3 +77,10 @@ jobs:
       - name: push docker image to ECR
         run: |
           docker push ${{ steps.login-ecr.outputs.registry }}/${{ secrets.ECR_REPOSITORY }}:${{ github.sha}}
+          # deployment 
+      - name: deploy to ECS
+        run: |
+          aws ecs update-service \
+          --cluster ${{ secrets.ECS_CLUSTER_NAME }} \
+          --service ${{ secrets.ECS_SERVICE_NAME }} \
+          --force-new-deployment

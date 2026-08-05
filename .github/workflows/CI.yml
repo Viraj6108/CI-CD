@@ -1,4 +1,4 @@
-name: Java CI
+name: CI/CD
 #  runs every time code is pushed to main repository 
 on:
   push:
@@ -63,7 +63,7 @@ jobs:
       runs-on: ubuntu-latest
 
       environment:
-      name: production
+        name: production
 
       steps:
 

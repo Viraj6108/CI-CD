@@ -35,6 +35,13 @@ jobs:
         with: 
           name: test-reports 
           path: target/surefire-reports
+      
+      # sonar check
+      - name: SonarQube Scan
+        run: |
+          mvn sonar:sonar \
+          -Dsonar.projectKey=${{ secrets.SONAR_PROJECT_KEY }} \
+          -Dsonar.login=${{ secrets.SONAR_QUBE_PROJECT_KEY }}
 
         # Configure AWS credentials 
       - name: Configure AWS credentials

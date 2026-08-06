@@ -40,7 +40,11 @@ jobs:
       - name: SonarCloud Scan
         uses: SonarSource/sonarcloud-github-action@master
         env:
-          SONAR_TOKEN: ${{ secrets.SONAR_QUBE_SECRET }}
+          SONAR_TOKEN: ${{ secrets.SONAR_QUBE_TOKEN }}
+        with:
+          args: >
+            -Dsonar.projectKey=viraj6108
+            -Dsonar.organization=Viraj6108
 
         # Configure AWS credentials 
       - name: Configure AWS credentials

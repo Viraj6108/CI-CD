@@ -43,7 +43,7 @@ jobs:
           SONAR_TOKEN: ${{ secrets.SONAR_QUBE_TOKEN }}
         with:
           args: >
-            -Dsonar.projectKey=viraj6108
+            -Dsonar.projectKey=CI-CD
             -Dsonar.organization=Viraj6108
 
         # Configure AWS credentials 

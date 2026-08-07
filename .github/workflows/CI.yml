@@ -46,12 +46,12 @@ jobs:
             echo "SONAR_QUBE_TOKEN is set."
             fi
         env:
-          SONAR_QUBE_TOKEN: ${{ secrets.SONAR_QUBE_TOKEN }}    
+          SONAR_QUBE_TOKEN: ${{ secrets.SONAR_QUBE_SECRET }}    
 
       - name: SonarCloud Scan
         uses: SonarSource/sonarcloud-github-action@master
         env:
-          SONAR_TOKEN: ${{ secrets.SONAR_QUBE_TOKEN }}
+          SONAR_TOKEN: ${{ secrets.SONAR_QUBE_SECRET }}
         with:
           args: >
             -Dsonar.projectKey=viraj6108

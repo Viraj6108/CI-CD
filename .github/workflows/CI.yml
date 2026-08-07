@@ -39,7 +39,7 @@ jobs:
       # sonar check
       - name: verfiy sonar token
         run: |
-          if [ -z "$SONAR_QUBE_SECRET" ]; then
+          if [ -z "$SONAR_QUBE_TOKEN" ]; then
             echo "SONAR_QUBE_TOKEN is not set. please set the token in the repository secrets."
             exit 1
           else
